@@ -14,7 +14,7 @@ from airflow.operators.bash import BashOperator
 
 # Define the DAG
 with DAG(
-    'read_file2',
+    'read_file',
     default_args={'owner': 'airflow'},
     schedule_interval=None,  # Set your schedule or leave as None to trigger manually
     start_date=days_ago(1),
@@ -27,7 +27,7 @@ with DAG(
     # )
     ls_file = BashOperator(
          task_id='list_file',
-        bash_command='ls /opt/airflow/plugin/'
+        bash_command='touch /opt/airflow/plugin/test.txt'
     )
 
     ls_file
