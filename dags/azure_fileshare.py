@@ -27,7 +27,7 @@ with DAG(
     # )
     ls_file = BashOperator(
          task_id='list_file',
-        bash_command='touch /opt/airflow/plugin/test.txt'
+        bash_command='touch /opt/airflow/plugins/test.txt'
     )
 
     ls_file
